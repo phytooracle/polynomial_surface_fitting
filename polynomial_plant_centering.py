@@ -6,7 +6,8 @@ Purpose: Rock the Casbah
 """
 # Sample deployment
 
-# sudo docker run test.img -i /home/travis/data/season10/50_pct_bounding_increase_03_02_100_sample/Wintercrop_3/combined_multiway_registered.ply
+# singularity build test.simg docker:phytooracle/polynomial_surface_fitting_s10
+# singularity run test.simg -i ./Wintercrop_3/combined_multiway_registered.ply
 
 
 import argparse
@@ -258,6 +259,13 @@ def main():
     plt.savefig(fig_output_path, dpi = 80, format = 'jpg')
 
     plt.close(fig)
+
+    df = pd.DataFrame(columns=['plant_name', 'num_centers', 'center_cluster_cordinates'])
+
+    information = [plant_name, clustering.n_clusters_, closest_center ]
+    df.loc[len(df)] = information
+
+    df.to_csv(fig_output_path.replace('.jpg', '_stats.csv'))
 
 
 
