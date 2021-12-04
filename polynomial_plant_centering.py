@@ -53,7 +53,7 @@ def get_args():
     parser.add_argument('-o',
                         '--outdir',
                         help='Output directory for gifs',
-                        default = 'polynomail_fitting_results',
+                        default = 'polynomial_fitting_results',
                         metavar='str',
                         type=str)
 
