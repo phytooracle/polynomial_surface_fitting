@@ -1,0 +1,9 @@
+pandas
+numpy
+open3d
+matplotlib
+sklearn
+scipy
+sympy
+
+
