@@ -84,7 +84,7 @@ def get_args():
 
     parser.add_argument('-ct',
                         '--crop_thresh',
-                        help='Size of final crop as a percentage of the whole are of the original pcd',
+                        help='Size of final crop as a percentage of the whole are of the original pcd divided by two.',
                         default = 0.25,
                         type = float)
 

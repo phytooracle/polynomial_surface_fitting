@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=3D-Pipeline-Part1
+#SBATCH --job-name=3D-Plant-Centering
 #SBATCH --account=lyons-lab
 #SBATCH --partition=standard
 #SBATCH --ntasks=15
@@ -8,26 +8,26 @@
 #SBATCH --mem=100GB
 #SBATCH --gres=gpu:0
 #SBATCH --time=10:00:00
-#SBATCH -o /xdisk/kobus/ariyanzarei/3d_geocorrection/logs/%x_%j.out
+#SBATCH -o  /xdisk/ericlyons/ariyanzarei/plant_centering/logs/%x_%j.out
 
 . pipeline.config
 
-# echo "::: Processing $scan_date from season $season"
+echo "::: Processing $scan_date from season $season"
 
-# echo "::: Cleaning up the directories."
+echo "::: Cleaning up the directories."
 
-# rm -r $data_path/*
-# rm -r $result_base_path/*
+rm -r $data_path/*
+rm -r $result_base_path/*
 
-# echo "::: Downloading the input data."
+echo "::: Downloading the input data."
 
-# ssh filexfer "cd $data_path; iget -rKVPT $cyverse_input_path"
+ssh filexfer "cd $data_path; iget -rKVPT $cyverse_input_path"
 
-# echo "::: Decompressing the input data."
+echo "::: Decompressing the input data."
 
-# cd $data_path
-# tar -xvf ${scan_date}.tar.gz
-# rm ${scan_date}.tar.gz
+cd $data_path
+tar -xvf ${scan_date}_combined_pointclouds_plants.tar
+rm ${scan_date}_combined_pointclouds_plants.tar
 
 # echo "::: Beginning the preprocessing, i.e. down sampling, merging and initializing alignment."
 
@@ -65,11 +65,11 @@
 # sbatch tmp.sh
 # rm tmp.sh
 
-echo "::: Beginning the sequential alignment process."
+# echo "::: Beginning the sequential alignment process."
 
-singularity exec $image python3 $alignment_code -i $preprocessing_output -o $alignment_output
+# singularity exec $image python3 $alignment_code -i $preprocessing_output -o $alignment_output
 
-echo "::: Preprocessing finished."
+# echo "::: Preprocessing finished."
 
 # echo "::: Compressing the preprocessing results."
 
