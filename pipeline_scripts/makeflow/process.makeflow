@@ -1,0 +1,150 @@
+/home/u24/travissimmons/cjx/season10/gifs/Tall_Guzmaine_83.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Tall_Guzmaine_83/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Tall_Guzmaine_83/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Tall_Guzmaine_83/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/GRxI_1077_124.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1077_124/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1077_124/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1077_124/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Green_Towers_BORDER_1927.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Green_Towers_BORDER_1927/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Green_Towers_BORDER_1927/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Green_Towers_BORDER_1927/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Passport_43.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Passport_43/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Passport_43/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Passport_43/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Passport_34.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Passport_34/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Passport_34/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Passport_34/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Libusa_254.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Libusa_254/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Libusa_254/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Libusa_254/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Boomerang_127.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Boomerang_127/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Boomerang_127/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Boomerang_127/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/GRxI_1062_292.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1062_292/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1062_292/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1062_292/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/GRxI_1025_32.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1025_32/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1025_32/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1025_32/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Oak_Pybas_10.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Oak_Pybas_10/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Oak_Pybas_10/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Oak_Pybas_10/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/GRxI_0995_33.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_0995_33/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_0995_33/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_0995_33/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Arizona_Sunbright_139.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Arizona_Sunbright_139/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Arizona_Sunbright_139/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Arizona_Sunbright_139/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Berwick_39.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Berwick_39/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Berwick_39/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Berwick_39/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/GRxI_1059_63.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1059_63/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1059_63/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1059_63/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/GRxI_1026_64.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1026_64/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1026_64/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1026_64/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Bibb_143.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Bibb_143/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Bibb_143/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Bibb_143/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/GRxI_1058_125.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1058_125/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1058_125/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1058_125/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Lolla_Rosa_48.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Lolla_Rosa_48/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Lolla_Rosa_48/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Lolla_Rosa_48/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Hearts_delight_25.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Hearts_delight_25/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Hearts_delight_25/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Hearts_delight_25/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/GRxI_1040_103.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1040_103/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1040_103/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1040_103/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Kigalie_225.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Kigalie_225/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Kigalie_225/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Kigalie_225/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Pennlake_189.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Pennlake_189/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Pennlake_189/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Pennlake_189/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Holborn_Standard_50.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Holborn_Standard_50/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Holborn_Standard_50/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Holborn_Standard_50/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Amplus_56.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Amplus_56/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Amplus_56/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Amplus_56/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/GRxI_1065_52.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1065_52/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1065_52/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1065_52/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Green_Towers_BORDER_3224.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Green_Towers_BORDER_3224/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Green_Towers_BORDER_3224/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Green_Towers_BORDER_3224/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/GRxI_1089_3.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1089_3/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1089_3/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1089_3/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Deer_tongue_62.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Deer_tongue_62/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Deer_tongue_62/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Deer_tongue_62/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Parade_151.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Parade_151/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Parade_151/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Parade_151/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/GRxI_1040_20.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1040_20/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1040_20/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1040_20/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Green_Towers_BORDER_2716.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Green_Towers_BORDER_2716/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Green_Towers_BORDER_2716/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Green_Towers_BORDER_2716/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/GRxI_0996_33.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_0996_33/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_0996_33/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_0996_33/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Diana_78.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Diana_78/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Diana_78/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Diana_78/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Summerlong_125.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Summerlong_125/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Summerlong_125/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Summerlong_125/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Cobham_Green_71.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Cobham_Green_71/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Cobham_Green_71/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Cobham_Green_71/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Pennlake_135.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Pennlake_135/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Pennlake_135/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Pennlake_135/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Oak_Pybas_39.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Oak_Pybas_39/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Oak_Pybas_39/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Oak_Pybas_39/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/GRxI_1053_67.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1053_67/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1053_67/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1053_67/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/GRxI_1055_269.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1055_269/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1055_269/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1055_269/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Moskovskij_Parnikovyj_36.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Moskovskij_Parnikovyj_36/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Moskovskij_Parnikovyj_36/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Moskovskij_Parnikovyj_36/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Batavia_Rouge_Grenobloise_50.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Batavia_Rouge_Grenobloise_50/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Batavia_Rouge_Grenobloise_50/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Batavia_Rouge_Grenobloise_50/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Deep_Red_157.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Deep_Red_157/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Deep_Red_157/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Deep_Red_157/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/GRxI_1071_111.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1071_111/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1071_111/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1071_111/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Grand_Rapids_68.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Grand_Rapids_68/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Grand_Rapids_68/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Grand_Rapids_68/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/El_Dorado_133.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/El_Dorado_133/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/El_Dorado_133/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/El_Dorado_133/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Cool_Guard_67.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Cool_Guard_67/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Cool_Guard_67/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Cool_Guard_67/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Kigalie_249.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Kigalie_249/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Kigalie_249/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Kigalie_249/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Empire_20.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Empire_20/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Empire_20/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Empire_20/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/GRxI_1042_103.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1042_103/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1042_103/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/GRxI_1042_103/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
+/home/u24/travissimmons/cjx/season10/gifs/Iceberg_45.gif : 3d_gif_generation.simg /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Iceberg_45/combined_multiway_registered.npy /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Iceberg_45/combined_multiway_registered.ply
+	singularity run 3d_gif_generation.simg -i /home/u24/travissimmons/cjx/season10/50_hand_label_test_2020_03_02/Iceberg_45/combined_multiway_registered.ply -o /home/u24/travissimmons/cjx/season10/gifs
+
