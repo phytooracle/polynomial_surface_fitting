@@ -226,31 +226,12 @@ def main():
         if closest_center is None or d<min_d:
             closest_center = center
             min_d = d
-    ## ------- Add this -----------
 
-    next_centroid = None
-    next_centroid_distance = sys.maxsize
-
-    for i in range(clustering.n_clusters_):
-        points = data[labels==i]
-        center = np.mean(points,axis=0)
-        d = math.sqrt((center[0]-closest_center[0])**2+(center[0]-closest_center[0])**2)
-        if d == 0:
-            continue
-        
-        if d<next_centroid_distance:
-            next_centroid_distance = d
-            next_centroid = center
-
-    if next_centroid is None:
-        radius = -1
-    else:
-        radius = next_centroid_distance/2
-
-    ##----------------------------
 
     print(f":: Found {clustering.n_clusters_} clusters")
     print(f":: Closest to center is {closest_center}")
+    # print(f":: Radius of cropping is {radius}")
+
 
     # Crop around the center
     mins = np.min(datapoints,axis=0)
@@ -263,13 +244,8 @@ def main():
     bound_y = crop_thresh*length
 
     new_pcd_arr = pcd_arr.copy()
-    # new_pcd_arr = new_pcd_arr[np.where((new_pcd_arr[:,0]>mins[0]+bound_x) & (new_pcd_arr[:,0]<maxs[0]-bound_x) & (new_pcd_arr[:,1]>mins[1]+bound_y) & (new_pcd_arr[:,1]<maxs[1]-bound_y))]
-        ## ------- Add this -----------
-    if radius == -1:
-        new_pcd_arr = new_pcd_arr[np.where((new_pcd_arr[:,0]>mins[0]+bound_x) & (new_pcd_arr[:,0]<maxs[0]-bound_x) & (new_pcd_arr[:,1]>mins[1]+bound_y) & (new_pcd_arr[:,1]<maxs[1]-bound_y))]
-    else:
-        new_pcd_arr = new_pcd_arr[np.where(np.sqrt((new_pcd_arr[:,0]-center[0])**2 + (new_pcd_arr[:,1]-center[1])**2)<radius)]
-    ## ----------------------------
+    new_pcd_arr = new_pcd_arr[np.where((new_pcd_arr[:,0]>mins[0]+bound_x) & (new_pcd_arr[:,0]<maxs[0]-bound_x) & (new_pcd_arr[:,1]>mins[1]+bound_y) & (new_pcd_arr[:,1]<maxs[1]-bound_y))]
+
     # output file figure, and csv
     final_pcd = o3d.geometry.PointCloud()
     final_pcd.points = o3d.utility.Vector3dVector(new_pcd_arr)
