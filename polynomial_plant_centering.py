@@ -50,6 +50,10 @@ def get_args():
                         type=str,
                         default='')
 
+    parser.add_argument('-c',
+                        '--crop',
+                        action = 'store_true')
+
     parser.add_argument('-o',
                         '--outdir',
                         help='Output directory for gifs',
@@ -107,6 +111,7 @@ def main():
     N = args.meshgrid_number
     tresh = args.thresh
     crop_thresh = args.crop_thresh
+    crop = args.crop
 
 
 
@@ -232,36 +237,36 @@ def main():
     print(f":: Closest to center is {closest_center}")
     # print(f":: Radius of cropping is {radius}")
 
+    if crop:
+        # Crop around the center
+        mins = np.min(datapoints,axis=0)
+        maxs = np.max(datapoints,axis=0)
 
-    # Crop around the center
-    mins = np.min(datapoints,axis=0)
-    maxs = np.max(datapoints,axis=0)
+        width = maxs[0]-mins[0]
+        length = maxs[1]-mins[1]
 
-    width = maxs[0]-mins[0]
-    length = maxs[1]-mins[1]
+        bound_x = crop_thresh*width
+        bound_y = crop_thresh*length
 
-    bound_x = crop_thresh*width
-    bound_y = crop_thresh*length
+        new_pcd_arr = pcd_arr.copy()
+        new_pcd_arr = new_pcd_arr[np.where((new_pcd_arr[:,0]>mins[0]+bound_x) & (new_pcd_arr[:,0]<maxs[0]-bound_x) & (new_pcd_arr[:,1]>mins[1]+bound_y) & (new_pcd_arr[:,1]<maxs[1]-bound_y))]
 
-    new_pcd_arr = pcd_arr.copy()
-    new_pcd_arr = new_pcd_arr[np.where((new_pcd_arr[:,0]>mins[0]+bound_x) & (new_pcd_arr[:,0]<maxs[0]-bound_x) & (new_pcd_arr[:,1]>mins[1]+bound_y) & (new_pcd_arr[:,1]<maxs[1]-bound_y))]
+        # output file figure, and csv
+        final_pcd = o3d.geometry.PointCloud()
+        final_pcd.points = o3d.utility.Vector3dVector(new_pcd_arr)
+        o3d.io.write_point_cloud(output_path, final_pcd)
 
-    # output file figure, and csv
-    final_pcd = o3d.geometry.PointCloud()
-    final_pcd.points = o3d.utility.Vector3dVector(new_pcd_arr)
-    o3d.io.write_point_cloud(output_path, final_pcd)
+        fig = plt.figure(figsize=(20, 15))
 
-    fig = plt.figure(figsize=(20, 15))
+        ax0 = fig.add_subplot(121, projection='3d')
+        ax0.scatter(pcd_arr[:,0], pcd_arr[:,1], pcd_arr[:,2], cmap=cm.autumn, c=pcd_arr[:,2], marker='.', alpha=0.4,s=0.5)
 
-    ax0 = fig.add_subplot(121, projection='3d')
-    ax0.scatter(pcd_arr[:,0], pcd_arr[:,1], pcd_arr[:,2], cmap=cm.autumn, c=pcd_arr[:,2], marker='.', alpha=0.4,s=0.5)
+        ax2 = fig.add_subplot(122, projection='3d')
+        ax2.scatter(new_pcd_arr[:,0], new_pcd_arr[:,1], new_pcd_arr[:,2], cmap=cm.autumn, c=new_pcd_arr[:,2], marker='.', alpha=0.4,s=0.5)
 
-    ax2 = fig.add_subplot(122, projection='3d')
-    ax2.scatter(new_pcd_arr[:,0], new_pcd_arr[:,1], new_pcd_arr[:,2], cmap=cm.autumn, c=new_pcd_arr[:,2], marker='.', alpha=0.4,s=0.5)
+        plt.savefig(fig_output_path, dpi = 80, format = 'jpg')
 
-    plt.savefig(fig_output_path, dpi = 80, format = 'jpg')
-
-    plt.close(fig)
+        plt.close(fig)
 
     df = pd.DataFrame(columns=['plant_name', 'num_centers', 'center_cluster_cordinates'])
 
