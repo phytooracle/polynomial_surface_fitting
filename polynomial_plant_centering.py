@@ -7,7 +7,7 @@ Purpose: Rock the Casbah
 # Sample deployment
 
 # singularity build test.simg docker:phytooracle/polynomial_surface_fitting_s10
-# singularity run test.simg -i ./Wintercrop_3/combined_multiway_registered.ply
+# singularity run test.simg -i ./Wintercrop_3/
 
 
 import argparse
@@ -43,28 +43,35 @@ def get_args():
         description='Rock the Casbah',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 
-    parser.add_argument('-i',
-                        '--input',
-                        help='Input pointcloud',
+    parser.add_argument('-p',
+                        '--plant_path',
+                        help='plant_path',
                         metavar='str',
-                        type=str,
-                        default='')
+                        type=str)
 
     parser.add_argument('-c',
                         '--crop',
                         action = 'store_true')
 
-    parser.add_argument('-o',
-                        '--outdir',
-                        help='Output directory for gifs',
-                        default = 'polynomial_fitting_results',
+    parser.add_argument('-po',
+                        '--pointcloud_outdir',
+                        help='Output directory for pointclouds',
+                        default = 'pointclouds',
+                        metavar='str',
+                        type=str)
+                        
+
+    parser.add_argument('-fo',
+                        '--figures_outdir',
+                        help='Output directory for figures',
+                        default = 'plant_reports',
                         metavar='str',
                         type=str)
 
-    parser.add_argument('-f',
-                        '--filename',
-                        help='Output filename',
-                        default = 'combined_multiway_registered_poly_fit',
+    parser.add_argument('-pf',
+                        '--pointcloud_filename',
+                        help='Pointcloud Output filename',
+                        default = 'poly_crop',
                         metavar='str',
                         type=str)
 
@@ -104,35 +111,55 @@ def main():
 
     # variables
     args = get_args()
-    pcd_path = args.input
-    output_dir = args.outdir
-    file_name = args.filename
+
+    # hyperparameters
     deg_of_poly = args.deg_of_poly
     N = args.meshgrid_number
     tresh = args.thresh
     crop_thresh = args.crop_thresh
     crop = args.crop
 
+    # Inputs
+    plant_path = args.plant_path
+    pcd_path = os.path.join(plant_path, 'combined_multiway_registered.ply')
+    plant_name = os.path.basename(plant_path)
 
 
-    plant_name = pcd_path.split('/')[-2]
-    plant_dir = os.path.join(output_dir, plant_name)
-    output_path = os.path.join(plant_dir, file_name + '.ply')
-    figures_directory = os.path.join(output_dir, 'figures')
-    fig_output_path = os.path.join(figures_directory, plant_name + '.jpg')
+
+    # Outputs
+    pointcloud_outdir = args.pointcloud_outdir
+    pointcloud_filename = args.pointcloud_filename
+    plant_pointcloud_outdir = os.path.join(pointcloud_outdir, plant_name)
+    full_pointcloud_outpath = os.path.join(plant_pointcloud_outdir, pointcloud_filename + '.ply')
+
+    figures_outdir = args.figures_outdir
+    plant_figures_outdir = os.path.join(figures_outdir, plant_name)
+
+    if crop:
+        extension = 'poly_crop'
+
+    else:
+        extension = 'poly_n'
+
+
+    full_csv_outpath = os.path.join(plant_figures_outdir, extension + '.csv')
+
+    full_jpg_outpath = os.path.join(plant_figures_outdir, extension + '.jpg')
+        
 
 
     # prepping output directory structure
-    if not os.path.exists(output_dir):
-        os.mkdir(output_dir)
+    if not os.path.exists(pointcloud_outdir):
+        os.mkdir(pointcloud_outdir)
 
+    if not os.path.exists(plant_pointcloud_outdir):
+        os.mkdir(plant_pointcloud_outdir)
 
-    if not os.path.exists(plant_dir):
-        os.mkdir(plant_dir)
+    if not os.path.exists(figures_outdir):
+        os.mkdir(figures_outdir)
 
-    
-    if not os.path.exists(figures_directory):
-        os.mkdir(figures_directory)
+    if not os.path.exists(plant_figures_outdir):
+        os.mkdir(plant_figures_outdir)
 
 
     # preparing point cloud
@@ -238,6 +265,8 @@ def main():
     # print(f":: Radius of cropping is {radius}")
 
     if crop:
+
+        print(f":: Cropping pointcloud")
         # Crop around the center
         mins = np.min(datapoints,axis=0)
         maxs = np.max(datapoints,axis=0)
@@ -254,26 +283,26 @@ def main():
         # output file figure, and csv
         final_pcd = o3d.geometry.PointCloud()
         final_pcd.points = o3d.utility.Vector3dVector(new_pcd_arr)
-        o3d.io.write_point_cloud(output_path, final_pcd)
+        o3d.io.write_point_cloud(full_pointcloud_outpath, final_pcd)
 
-        fig = plt.figure(figsize=(20, 15))
+        # fig = plt.figure(figsize=(20, 15))
 
-        ax0 = fig.add_subplot(121, projection='3d')
-        ax0.scatter(pcd_arr[:,0], pcd_arr[:,1], pcd_arr[:,2], cmap=cm.autumn, c=pcd_arr[:,2], marker='.', alpha=0.4,s=0.5)
+        # ax0 = fig.add_subplot(121, projection='3d')
+        # ax0.scatter(pcd_arr[:,0], pcd_arr[:,1], pcd_arr[:,2], cmap=cm.autumn, c=pcd_arr[:,2], marker='.', alpha=0.4,s=0.5)
 
-        ax2 = fig.add_subplot(122, projection='3d')
-        ax2.scatter(new_pcd_arr[:,0], new_pcd_arr[:,1], new_pcd_arr[:,2], cmap=cm.autumn, c=new_pcd_arr[:,2], marker='.', alpha=0.4,s=0.5)
+        # ax2 = fig.add_subplot(122, projection='3d')
+        # ax2.scatter(new_pcd_arr[:,0], new_pcd_arr[:,1], new_pcd_arr[:,2], cmap=cm.autumn, c=new_pcd_arr[:,2], marker='.', alpha=0.4,s=0.5)
 
-        plt.savefig(fig_output_path, dpi = 80, format = 'jpg')
+        # plt.savefig(full_jpg_outpath, dpi = 80, format = 'jpg')
 
-        plt.close(fig)
+        # plt.close(fig)
 
     df = pd.DataFrame(columns=['plant_name', 'num_centers', 'center_cluster_cordinates'])
 
     information = [plant_name, clustering.n_clusters_, closest_center ]
     df.loc[len(df)] = information
 
-    df.to_csv(fig_output_path.replace('.jpg', '_stats.csv'))
+    df.to_csv(full_csv_outpath)
 
 
 
