@@ -56,7 +56,7 @@ def get_args():
     parser.add_argument('-po',
                         '--pointcloud_outdir',
                         help='Output directory for pointclouds',
-                        default = 'pointclouds',
+                        default = 'segmentation_pointclouds',
                         metavar='str',
                         type=str)
                         

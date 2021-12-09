@@ -9,7 +9,7 @@ singularity run test.simg -i ./Wintercrop_3/
 ## Output structure
 
 ### If -c for cropping
-where_you_ran_it/pointclouds/plant_names/poly_crop.ply
+where_you_ran_it/segmentation_pointclouds/plant_names/poly_crop.ply
 
 where_you_ran_it/plant_reports/plant_names/poly_crop.csv
 
