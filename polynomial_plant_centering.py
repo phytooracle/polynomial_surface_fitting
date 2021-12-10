@@ -123,6 +123,7 @@ def main():
     plant_path = args.plant_path
     pcd_path = os.path.join(plant_path, 'combined_multiway_registered.ply')
     plant_name = os.path.basename(plant_path)
+    print(plant_name)
 
 
 
@@ -146,7 +147,7 @@ def main():
 
     full_jpg_outpath = os.path.join(plant_figures_outdir, extension + '.jpg')
         
-
+    # print(full_pointcloud_outpath)
 
     # prepping output directory structure
     if not os.path.exists(pointcloud_outdir):
@@ -297,9 +298,16 @@ def main():
 
         # plt.close(fig)
 
-    df = pd.DataFrame(columns=['plant_name', 'num_centers', 'center_cluster_cordinates'])
+        new_pcd_point_count = len(new_pcd_arr)
 
-    information = [plant_name, clustering.n_clusters_, closest_center ]
+    else:
+        new_pcd_point_count = 'NaN'
+
+    df = pd.DataFrame(columns=['plant_name','polynomial_degree', 'original_pcd_point_count', 'new_pcd_point_count', 'num_centers', 'center_cluster_cordinates'])
+
+    original_pcd_point_count = len(pcd_arr)
+
+    information = [plant_name, deg_of_poly, original_pcd_point_count, new_pcd_point_count, clustering.n_clusters_, closest_center ]
     df.loc[len(df)] = information
 
     df.to_csv(full_csv_outpath)
