@@ -105,6 +105,32 @@ def get_args():
 
 
 
+def generate_before_after_plot(pcd_arr,new_pcd_arr,full_jpg_outpath):
+    fig = plt.figure(figsize=(20, 15))
+    ax0 = fig.add_subplot(121, projection='3d')
+    ax0.scatter(pcd_arr[:,0], pcd_arr[:,1], pcd_arr[:,2], cmap=cm.autumn, c=pcd_arr[:,2], marker='.', alpha=0.4,s=0.5)
+    ax2 = fig.add_subplot(122, projection='3d')
+    ax2.scatter(new_pcd_arr[:,0], new_pcd_arr[:,1], new_pcd_arr[:,2], cmap=cm.autumn, c=new_pcd_arr[:,2], marker='.', alpha=0.4,s=0.5)
+    plt.savefig(full_jpg_outpath, dpi = 80, format = 'jpg')
+    plt.close(fig)
+
+def generate_fitting_plot(predict_x0,predict_x1,y_new,sx20,sx21,z,closest_center,full_jpg_outpath):
+    fig = plt.figure(figsize=(20, 15))
+    ax1 = fig.add_subplot(121, projection='3d')
+    surf = ax1.plot_surface(predict_x0, predict_x1, y_new, rstride=1, cstride=1, cmap=cm.Blues, alpha=0.4)
+    ax1.scatter(sx20, sx21, z, c='b', marker='o',alpha=1)
+    fig.colorbar(surf, ax=ax1)
+    
+    ax2 = fig.add_subplot(122)
+    cs = ax2.contourf(predict_x0, predict_x1, y_new.reshape(predict_x0.shape),levels=20)
+    ax2.contour(cs, colors='k')
+    fig.colorbar(cs, ax=ax2)
+    ax2.scatter(sx20,sx21,c='r',marker='.')
+    ax2.scatter(closest_center[0],closest_center[1],c='black',marker='X',s=100)
+
+    plt.savefig(full_jpg_outpath, dpi = 80, format = 'jpg')
+    plt.close(fig)
+
 # --------------------------------------------------
 def main():
     """Make a jazz noise here"""
@@ -144,10 +170,10 @@ def main():
 
 
     full_csv_outpath = os.path.join(plant_figures_outdir, extension + '.csv')
+    
 
-    full_jpg_outpath = os.path.join(plant_figures_outdir, extension + '.jpg')
-        
-    # print(full_pointcloud_outpath)
+    full_jpg_outpath = os.path.join(plant_figures_outdir, extension + '-before_after.jpg')
+    full_fitting_jpg_outpath = os.path.join(plant_figures_outdir, extension + '-fitting.jpg')
 
     # prepping output directory structure
     if not os.path.exists(pointcloud_outdir):
@@ -238,6 +264,7 @@ def main():
     D = y_new_11*y_new_22-y_new_12**2
     sx20 = predict_x0[np.where((y_new_1<=tresh) & (y_new_1>=-tresh) & (y_new_2<=tresh) & (y_new_2>=-tresh) & (y_new_11<0) & (D>0))]
     sx21 = predict_x1[np.where((y_new_1<=tresh) & (y_new_1>=-tresh) & (y_new_2<=tresh) & (y_new_2>=-tresh) & (y_new_11<0) & (D>0))]
+    z = func(sx20,sx21)
 
     # Finding clusters and centroids
     data = np.array([[x,sx21[i]] for i,x in enumerate(sx20)])
@@ -281,22 +308,14 @@ def main():
         new_pcd_arr = pcd_arr.copy()
         new_pcd_arr = new_pcd_arr[np.where((new_pcd_arr[:,0]>mins[0]+bound_x) & (new_pcd_arr[:,0]<maxs[0]-bound_x) & (new_pcd_arr[:,1]>mins[1]+bound_y) & (new_pcd_arr[:,1]<maxs[1]-bound_y))]
 
-        # output file figure, and csv
+        # output file and csv
         final_pcd = o3d.geometry.PointCloud()
         final_pcd.points = o3d.utility.Vector3dVector(new_pcd_arr)
         o3d.io.write_point_cloud(full_pointcloud_outpath, final_pcd)
 
-        # fig = plt.figure(figsize=(20, 15))
-
-        # ax0 = fig.add_subplot(121, projection='3d')
-        # ax0.scatter(pcd_arr[:,0], pcd_arr[:,1], pcd_arr[:,2], cmap=cm.autumn, c=pcd_arr[:,2], marker='.', alpha=0.4,s=0.5)
-
-        # ax2 = fig.add_subplot(122, projection='3d')
-        # ax2.scatter(new_pcd_arr[:,0], new_pcd_arr[:,1], new_pcd_arr[:,2], cmap=cm.autumn, c=new_pcd_arr[:,2], marker='.', alpha=0.4,s=0.5)
-
-        # plt.savefig(full_jpg_outpath, dpi = 80, format = 'jpg')
-
-        # plt.close(fig)
+        # Create figures
+        generate_before_after_plot(pcd_arr,new_pcd_arr,full_jpg_outpath)
+        generate_fitting_plot(predict_x0,predict_x1,y_new,sx20,sx21,z,closest_center,full_fitting_jpg_outpath)
 
         new_pcd_point_count = len(new_pcd_arr)
 
