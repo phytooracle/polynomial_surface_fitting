@@ -315,12 +315,14 @@ def main():
 
         # Create figures
         generate_before_after_plot(pcd_arr,new_pcd_arr,full_jpg_outpath)
-        generate_fitting_plot(predict_x0,predict_x1,y_new,sx20,sx21,z,closest_center,full_fitting_jpg_outpath)
+        
 
         new_pcd_point_count = len(new_pcd_arr)
 
     else:
         new_pcd_point_count = 'NaN'
+
+    generate_fitting_plot(predict_x0,predict_x1,y_new,sx20,sx21,z,closest_center,full_fitting_jpg_outpath)
 
     df = pd.DataFrame(columns=['plant_name','polynomial_degree', 'original_pcd_point_count', 'new_pcd_point_count', 'num_centers', 'center_cluster_cordinates'])
 
