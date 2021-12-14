@@ -14,56 +14,60 @@
 
 echo "::: Processing $scan_date from season $season"
 
-echo "::: Cleaning up the directories."
+# echo "::: Cleaning up the directories."
 
-rm -r $data_path/*
-rm -r $result_base_path/*
+# rm -r $data_path/*
+# rm -r $result_base_path/*
 
-echo "::: Downloading the input data."
+# echo "::: Downloading the input data."
 
-ssh filexfer "cd $data_path; iget -rKVPT $cyverse_input_path"
+# ssh filexfer "cd $data_path; iget -rKVPT $cyverse_input_path"
 
-echo "::: Decompressing the input data."
+# echo "::: Decompressing the input data."
 
-cd $data_path
-tar -xvf ${scan_date}_combined_pointclouds_plants.tar
-rm ${scan_date}_combined_pointclouds_plants.tar
+# cd $data_path
+# tar -xvf ${scan_date}_combined_pointclouds_plants.tar
+# rm ${scan_date}_combined_pointclouds_plants.tar
 
-# echo "::: Beginning the preprocessing, i.e. down sampling, merging and initializing alignment."
+echo "::: Beginning the processing..."
 
-# mkdir -p $preprocessing_output
-# mkdir -p $alignment_output
+mkdir -p $hpc_output
 
-# cd $preprocessing_input
+cd $hpc_input
 
-# count=$(ls -d * |wc -l)
-# count=$((count-1))
+count=$(ls -d * |wc -l)
+count=$((count-1))
 
-# echo "#!/bin/bash
-# #SBATCH --job-name=3D-Batch-Preprocessing
-# #SBATCH --account=lyons-lab
-# #SBATCH --partition=standard
-# #SBATCH --ntasks=15
-# #SBATCH --ntasks-per-node=15
-# #SBATCH --nodes=1
-# #SBATCH --mem=100GB
-# #SBATCH --gres=gpu:0
-# #SBATCH --time=00:20:00
-# #SBATCH --array 0-$count
-# #SBATCH --wait
-# #SBATCH -o /xdisk/kobus/ariyanzarei/3d_geocorrection/logs/%x_%A_%a.out
+echo $count
 
-# code=$preprocessing_code
+echo "#!/bin/bash
+#SBATCH --job-name=3D-PlantCentering-Batch
+#SBATCH --account=lyons-lab
+#SBATCH --partition=standard
+#SBATCH --ntasks=15
+#SBATCH --ntasks-per-node=15
+#SBATCH --nodes=1
+#SBATCH --mem=100GB
+#SBATCH --gres=gpu:0
+#SBATCH --time=00:05:00
+#SBATCH --array 0-$count
+#SBATCH --wait
+#SBATCH -o /xdisk/ericlyons/ariyanzarei/plant_centering/logs/%x_%A_%a.out
 
-# cd $preprocessing_input
-# folders=(\$(ls -d */))
-# dir_name=\${folders[\${SLURM_ARRAY_TASK_ID}]}
+cd $hpc_input
+folders=(\$(ls -d */))
+dir_name=\${folders[\${SLURM_ARRAY_TASK_ID}]}
 
-# singularity exec $image python3 $preprocessing_code -i $preprocessing_input/\$dir_name -o $preprocessing_output -l $lids">tmp.sh
+cd $hpc_output
+mkdir \$dir_name
 
-# chmod +x tmp.sh
-# sbatch tmp.sh
-# rm tmp.sh
+cd $hpc_input
+
+singularity run $image -i $hpc_input/\$dir_name/combined_multiway_registered.ply -o $hpc_output/\$dir_name">tmp.sh
+
+chmod +x tmp.sh
+sbatch tmp.sh
+rm tmp.sh
 
 # echo "::: Beginning the sequential alignment process."
 

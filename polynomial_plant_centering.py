@@ -281,7 +281,7 @@ def main():
         points = data[labels==i]
         center = np.mean(points,axis=0)
         centers.append(center)
-        d = math.sqrt((center[0]-pcd_center[0])**2+(center[0]-pcd_center[0])**2)
+        d = math.sqrt((center[0]-pcd_center[0])**2+(center[1]-pcd_center[1])**2)
 
         if closest_center is None or d<min_d:
             closest_center = center
