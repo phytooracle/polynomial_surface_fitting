@@ -306,7 +306,7 @@ def main():
         bound_y = crop_thresh*length
 
         new_pcd_arr = pcd_arr.copy()
-        new_pcd_arr = new_pcd_arr[np.where((new_pcd_arr[:,0]>mins[0]+bound_x) & (new_pcd_arr[:,0]<maxs[0]-bound_x) & (new_pcd_arr[:,1]>mins[1]+bound_y) & (new_pcd_arr[:,1]<maxs[1]-bound_y))]
+        new_pcd_arr = new_pcd_arr[np.where((new_pcd_arr[:,0]>closest_center[0]-bound_x) & (new_pcd_arr[:,0]<closest_center[0]+bound_x) & (new_pcd_arr[:,1]>closest_center[1]-bound_y) & (new_pcd_arr[:,1]<closest_center[1]+bound_y))]
 
         # output file and csv
         final_pcd = o3d.geometry.PointCloud()
